@@ -10,6 +10,9 @@ import base64
 import json
 
 from werkzeug.utils import secure_filename
+
+from transformers import pipeline
+
 # from werkzeug.datastructures import  FileStorage
 
 # project_root = os.path.dirname(__file__)
@@ -22,7 +25,7 @@ app=Flask(__name__)
 # classifier=pickle.load(pickle_in)
 
 # classifier = pipeline_load()
-
+classifier = pipeline('sentiment-analysis')
 # @app.route('/')
 # def welcome():
 #     return "Welcome All"
@@ -34,8 +37,8 @@ def form():
 @app.route('/file_upload', methods=['POST'])
 def file_handler():
     f = request.files['file']
-    f.save(secure_filename(f.filename))
-    y = review_sentiment(f.filename)
+    # f.save(secure_filename(f.filename))
+    y = review_sentiment(f.filename, classifier)
     data = json.loads(y)
     df = pd.DataFrame.from_records(data)
 
