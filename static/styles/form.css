@@ -1,0 +1,17 @@
+ #d1 {
+    color: blue;
+    font-weight: bold;
+    font-family: "Arial";
+    margin: auto;
+    text-align: center;
+    width: 75%;
+  }
+
+  #d2 {
+	background: skyblue;
+  	border: 1px solid #FFFFFF;
+  	text-align: center;
+  	padding-top: 15px;
+  	margin: auto;
+  	width: 25%;
+  }
