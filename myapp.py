@@ -1,11 +1,10 @@
 from flask import Flask, request
-import numpy as np
 import pickle
 import pandas as pd
-import flasgger
+# import flasgger
 import os
 from rating_reviews import review_sentiment
-from flasgger import Swagger
+# from flasgger import Swagger
 from flask import Flask, render_template, request
 import base64
 import json

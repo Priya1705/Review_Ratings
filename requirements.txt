@@ -1,0 +1,8 @@
+werkzeug
+pandas
+transformers
+jupyter
+matplotlib
+scikit-learn
+flask
+pickle
