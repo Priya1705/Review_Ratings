@@ -1,6 +1,10 @@
 # def pipeline_load():
 #     from transformers import pipeline
 #     classifier = pipeline('sentiment-analysis')
+import pandas as pd
+import numpy as np
+import re
+from transformers import pipeline
 
 def review_sentiment(file):
     # x="helloooo"
@@ -8,18 +12,18 @@ def review_sentiment(file):
     # return x
 #     classifier = classify
 
-    import pandas as pd
-    import numpy as np
-    import re
+    
 
-    from transformers import pipeline
+    
     classifier = pipeline('sentiment-analysis')
 
     # classifier.save_pretrained('classifier') 
     # path = 'https://drive.google.com/drive/folders/12Zf5o25wu3fskMzGmBtjaZD6t3Oz95pR?usp=sharing'
     # classifier = pipeline(task = 'sentiment-analysis', model=path, tokenizer=path)
     # classifier = pipeline(task = 'sentiment-analysis')
-    
+    # print("Hello Peter")
+    # dataset = pd.DataFrame([csv_reader], index = None)
+    # print(dataset)
     dataset = pd.read_csv(file)
     data=pd.DataFrame(list(zip(dataset["Text"], dataset["Star"])),columns=['Text','Star'])
     

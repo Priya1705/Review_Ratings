@@ -37,7 +37,7 @@ def form():
 @app.route('/file_upload', methods=['POST'])
 def file_handler():
     f = request.files['file']
-    # f.save(secure_filename(f.filename))
+    f.save(secure_filename(f.filename))
     y = review_sentiment(f.filename)
     data = json.loads(y)
     df = pd.DataFrame.from_records(data)
