@@ -8,6 +8,7 @@ from rating_reviews import review_sentiment
 from flask import Flask, render_template, request
 import base64
 import json
+from waitress import serve
 
 from werkzeug.utils import secure_filename
 
@@ -50,7 +51,8 @@ def file_handler():
 
 if __name__=='__main__':
     # app.run(host='0.0.0.0',port=8000)
-    app.run()
+    # app.run()
+    serve(app, host='0.0.0.0', port=80)
     
     
 
